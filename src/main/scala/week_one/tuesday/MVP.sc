@@ -43,5 +43,7 @@ one.toString
 // we can change the name of the value to something which is not a keyword to make it compile
 val newString: String = "New String"
 //should now compile
-// new val def class var are keywords
+// new val def class var are keywords `new`
+
+val `new`: String = "Another new String"
 
