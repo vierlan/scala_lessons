@@ -135,9 +135,9 @@ val containsR: Seq[Boolean] = nameSeq.map {
   name => name.toLowerCase.contains("r")
 }
 
-//val containsRExists: Boolean = nameSeq.exists(
-//  name => name.exists"r"
-//)
+val containsRExists: Boolean = nameSeq.exists(
+  name => name.exists(c => c == 'r' || c == 'R')
+)
 
 //val flatMapName: Seq[Char]
 
