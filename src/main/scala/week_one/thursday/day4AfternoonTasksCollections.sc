@@ -3,6 +3,10 @@
 val numberList: List[Int] = List(1,2,3,4,5)
 val colourSeq: Seq[String] = Seq("Red", "Green", "Blue")
 
+val timesByThree: List[Int] = numberList.map{
+  number => number * 3
+}
+
 val removeBlue: Seq[String] = colourSeq.init
 val containsOrange: Boolean =  colourSeq.contains("orange")
 val booleanMap: List[Boolean] = numberList.map{
