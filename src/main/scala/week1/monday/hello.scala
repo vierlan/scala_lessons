@@ -1,4 +1,4 @@
-package week_one.monday
+package week1.monday
 
 object hello extends App {
 
