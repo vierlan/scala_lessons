@@ -24,13 +24,6 @@ def sumTwo(numberList: List[Int]): Int = {
 sumTwo(numList)
 
 // 4)
-val scoreTable: Map[String, Range] = Map(
-  "E" -> (0 to 59),
-  "D" -> (60 to 69),
-  "C" -> (70 to 79),
-  "B" -> (80 to 89),
-  "A" -> (90 to 100)
-)
 
 def getGrade(mathsGrade: Int, englishGrade: Int, scienceGrade: Int): String = {
   val averageScore: Double = ((mathsGrade + englishGrade + scienceGrade) / 3)
@@ -51,17 +44,6 @@ def getGrade(mathsGrade: Int, englishGrade: Int, scienceGrade: Int): String = {
 }
 
 getGrade(57, 98, 78)
-
-
-import scala.io.StdIn.readInt
-
-print("Please enter score for Maths \n")
-val mathScore= readInt()
-print("Please enter score for English \n")
-val englishScore = readInt()
-print("Please enter score for Science \n")
-val scienceScore= readInt()
-getGrade(mathScore, englishScore, scienceScore)
 
 // Extension tasks in helloInteractive.scala and GetScore.scala files
 
