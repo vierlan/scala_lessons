@@ -64,3 +64,7 @@ val scienceScore= readInt()
 getGrade(mathScore, englishScore, scienceScore)
 
 // Extension tasks in helloInteractive.scala and GetScore.scala files
+
+// Research -- Pure functions are functions that take an input and give an output without
+// making changes to, or reading from, any other data from outside of that function.
+// Therefore, given the same input, it will always output the same output.
