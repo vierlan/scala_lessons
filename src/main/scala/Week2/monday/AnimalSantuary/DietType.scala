@@ -4,18 +4,16 @@ import Week2.monday.AnimalSantuary.Animal
 
 sealed trait DietType
 
-//case class Cat(name: Name, age: Age, furColour: String, hasTail: Boolean, mealsPerDay: Int) extends Mammal(name, age, furColour, hasTail) with DietType
-case class Cat(mealsPerDay: Int) extends DietType
-case class Hamster(mealsPerDay: Int, proteinSource: String) extends DietType
-case class Lion(mealsPerDay: Int) extends DietType
+case class Cat(override val name: Name, override val age: Age, override val furColour: String, override val hasTail: Boolean, mealsPerDay: Int) extends Mammal(name, age, furColour, hasTail) with DietType
+case class Hamster(override val name: Name, override val age: Age, override val furColour: String, override val hasTail: Boolean, mealsPerDay: Int, proteinSource: String) extends Mammal(name, age, furColour, hasTail) with DietType
+case class Lion(override val name: Name, override val age: Age, override val furColour: String, override val hasTail: Boolean, mealsPerDay: Int) extends Mammal(name, age, furColour, hasTail) with DietType
 
 object DietSelector {
   def selectDietType(dietType: DietType): String = {
     dietType match {
-    //  case Cat(name, age, furColour, hasTail, mealsPerDay) => "Omnivore"
-      case Cat(mealsPerDay) => "Omnivore"
-      case Hamster(mealsPerDay, proteinSource) => "Herbivore."
-      case Lion(mealsPerDay) => "Carnivore."
+      case Cat(name, age, furColour, hasTail, mealsPerDay) => "Omnivore"
+      case Hamster(name, age, furColour, hasTail, mealsPerDay, proteinSource) => "Herbivore."
+      case Lion(name, age, furColour, hasTail, mealsPerDay) => "Carnivore."
     }
   }
 }

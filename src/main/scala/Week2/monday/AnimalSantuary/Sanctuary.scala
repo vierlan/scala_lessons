@@ -1,15 +1,21 @@
 package Week2.monday.AnimalSantuary
 
 object Sanctuary extends App{
-  //val catWithSealedTrait = Cat(name = new Name("Fluffy"), age = new Age(8), furColour = "ginger", hasTail = true, mealsPerDay = 3)
-  val catWithSealedTrait = Cat(mealsPerDay = 3)
+
+  case class Santuary(name: String, animals: List[Animal])
+
+  val catWithSealedTrait = Cat(name = new Name("Fluffy"), age = new Age(8), furColour = "ginger", hasTail = true, mealsPerDay = 2)
   println(DietSelector.selectDietType(catWithSealedTrait))
 
-  val lionWithSealedTrait = Lion(mealsPerDay = 1)
+  val lionWithSealedTrait = Lion(name = new Name("Simba"), age = new Age(4), furColour = "golden", hasTail = true, mealsPerDay = 1)
   println(DietSelector.selectDietType(lionWithSealedTrait))
 
-  val hamsterWithSealedTrait = Hamster(mealsPerDay = 6, proteinSource = "Seeds")
+  val hamsterWithSealedTrait = Hamster(name = new Name("Hammer"), age = new Age(2), furColour = "blonde", hasTail = true, mealsPerDay = 4, proteinSource = "Seeds")
   println(DietSelector.selectDietType(hamsterWithSealedTrait))
+
+  val santuary: Santuary = Santuary(name = "Animal Santuary", animals = List(catWithSealedTrait, lionWithSealedTrait, hamsterWithSealedTrait))
+  println(santuary)
+
 }
 
 

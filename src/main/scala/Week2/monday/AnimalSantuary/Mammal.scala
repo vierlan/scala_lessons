@@ -8,15 +8,15 @@ object Mammal {
   def apply(name: Name, age: Age, furColour: String, hasTail: Boolean): Mammal = new Mammal(name, age, furColour, hasTail)
 }
 
-class Warthog(name: Name, age: Age, furColour: String, hasTail: Boolean) extends Mammal(name, age, furColour, hasTail) with Species {
+class Warthog(name: Name, age: Age, furColour: String, hasTail: Boolean) extends Mammal(name, age, furColour, hasTail) with CommonWarthog {
   val hasTusks = true
 }
 
-object Warthog extends Species {
+object Warthog {
   def apply(name: Name, age: Age, furColour: String, hasTail: Boolean): Warthog = new Warthog(name, age, furColour, hasTail)
 }
 
-class Dog(name: Name, age: Age, furColour: String, hasTail: Boolean) extends Mammal(name, age, furColour, hasTail) with Species {
+class Dog(name: Name, age: Age, furColour: String, hasTail: Boolean) extends Mammal(name, age, furColour, hasTail) with WaggyTail {
   val tailLength: Int = 8
   val extractedName: String = name.name
   def wagTailMore: String = s"$extractedName is wagging their tail"
