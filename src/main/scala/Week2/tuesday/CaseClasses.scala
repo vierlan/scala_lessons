@@ -35,7 +35,7 @@ object CaseClasses extends App {
     }
   }
 
-  val puppyClub = new Kennel(name = "Puppy Club",dogList = List(dog1, dog2, dog3, dog4))
+  val puppyClub = new Kennel(name = "Puppy Club",dogList = List(dog1, dog2, dog3, dog4), catList = List(), birdList = List())
   println(puppyClub.dogList)
 
   val animalClub = puppyClub.copy(name = "Animal Club")
@@ -48,6 +48,6 @@ object CaseClasses extends App {
   val cat1 = Cat(name = "Fluffy", furColour = "Golden", age = 3)
   val bird1 = Bird(name = "Kookoo", speaks = true, weight = 1.2)
 
-  val kennelAddDog = animalClub.copy()
+  //val kennelAddDog = animalClub.copy()
 
 }
