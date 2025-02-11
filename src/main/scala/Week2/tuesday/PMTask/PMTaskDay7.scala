@@ -55,4 +55,30 @@ object PMTaskDay7 extends App {
   println(vanillaMuffin == finalChocolateMuffin)
   println(anotherChocolateMuffin == finalChocolateMuffin)
 
+  // Extension Task
+
+  case class House(address: String, areaInSqFt: Double, noOfFloors: Int, structure: Structure )
+
+  sealed trait Structure
+  case object Detached extends Structure
+  case object SemiDetached extends Structure
+  case object Terraced extends Structure
+  case object Apartment extends Structure
+  case object Bungalow extends Structure
+
+  var familyHome = House("10 Wood Lane, Coventry", 100.67, 2, SemiDetached)
+  var bigHouse = House("7 Cherry Drive, Oxford", 360.21, 3, Detached)
+  var smallHome = House("12 City Rd, London", 60.75, 2, Terraced)
+  var firstHome = House("10 Rome Way, Southampton", 65.76, 1, Apartment)
+  var secondHome = House("10 Rome Way, Southampton", 65.76, 1, Apartment)
+  var retireHome = House("3 Gerry Rd, Cornwall", 80.45, 1, Bungalow)
+  println(s"Address: ${familyHome.address} \nArea: ${familyHome.areaInSqFt.toString}sq ft \nNo. of floors: ${familyHome.noOfFloors.toString} \nConstruction: ${familyHome.structure.toString}")
+  println(s"Address: ${familyHome.address} \nArea: ${familyHome.areaInSqFt.toString}sq ft \nNo. of floors: ${familyHome.noOfFloors.toString} \nConstruction: ${familyHome.structure.toString}")
+  println(s"Address: ${familyHome.address} \nArea: ${familyHome.areaInSqFt.toString}sq ft \nNo. of floors: ${familyHome.noOfFloors.toString} \nConstruction: ${familyHome.structure.toString}")
+  println(s"Address: ${familyHome.address} \nArea: ${familyHome.areaInSqFt.toString}sq ft \nNo. of floors: ${familyHome.noOfFloors.toString} \nConstruction: ${familyHome.structure.toString}")
+  println(s"Address: ${familyHome.address} \nArea: ${familyHome.areaInSqFt.toString}sq ft \nNo. of floors: ${familyHome.noOfFloors.toString} \nConstruction: ${familyHome.structure.toString}")
+  println(s"Address: ${familyHome.address} \nArea: ${familyHome.areaInSqFt.toString}sq ft \nNo. of floors: ${familyHome.noOfFloors.toString} \nConstruction: ${familyHome.structure.toString}")
+  println(bigHouse.equals(smallHome))
+  println(firstHome.equals(smallHome))
+  println(firstHome.equals(secondHome))
 }
