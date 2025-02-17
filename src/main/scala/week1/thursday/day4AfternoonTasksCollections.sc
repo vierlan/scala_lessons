@@ -36,7 +36,7 @@ val getThirdElement: Int = appendedList.tail.tail.head
 
 /**
  * Research Task
- * Diffence between a Set and a Sequence
+ * Difference between a Set and a Sequence
  * Set
  * Unordered (no index, order can change)
  * Cannot have duplicates
