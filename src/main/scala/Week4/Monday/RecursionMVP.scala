@@ -44,12 +44,16 @@ object RecursionMVP extends App {
     case object Georgia
   }
 
-  val germany = List(Teams)
-  println(germany)
-  def printCaseObjects(team: List[Teams], acc: String) = {
+  val teamList2: List[Any ] = List(Teams.Germany, Teams.Italy, Teams.Spain, Teams.Denmark, Teams.England, Teams.Austria)
 
+  def printCaseObjects(team: List[Any]) = {
+    Teams match {
+      case x => println(s"case ${x.England}")
+      case _ => println("case _")
+    }
 
   }
+  printCaseObjects(teamList2)
 
   // 3)
 

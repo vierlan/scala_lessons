@@ -7,11 +7,11 @@ object FibonacciCalc extends App {
 
     def fibonacciRecursion(position: Int): Int = {
       @tailrec
-      def fibonacciRecursionHelper(x: Int, a: Int, b: Int, fibList: List[Int]): Int = {
-        if (x <= 1) a
+      def fibonacciRecursionHelper(baseCountdown: Int, leftNum: Int, rightNum: Int, fibList: List[Int]): Int = {
+        if (baseCountdown <= 1) leftNum
         else {
-          println(s"$x, $a, $b, $fibList")
-          fibonacciRecursionHelper(x - 1, b, a + b, fibList :+ a)
+          println(s"$baseCountdown, $leftNum, $rightNum, $fibList")
+          fibonacciRecursionHelper( baseCountdown - 1, rightNum, leftNum + rightNum, fibList :+ leftNum)
         }
       }
       fibonacciRecursionHelper(position, 0, 1, Nil)
