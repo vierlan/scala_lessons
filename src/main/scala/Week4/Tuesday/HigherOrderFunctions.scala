@@ -53,7 +53,7 @@ object HigherOrderFunctions extends App {
   //(1,2) => 1 + 2 = 3 (acc = 3)
   // (3,3) => 3 + 3 = 6 (acc = 6)
   // (6,4) => 6 + 4 = 10 (acc = 10)
-  // at thend end, returns acc
+  // at the end end, returns acc
 
   /** Write a method the takes a list of words that returns a sentence */
   val stringList: List[String] = List("I", "got", "my", "first", "pay", "from", "Mercator")
@@ -90,9 +90,7 @@ object HigherOrderFunctions extends App {
   val amandaVeryLong = Employee("Amanda", 8, 30000.00)
 
   def bigPayRise: Double => Double = salary => salary * 2
-
   def mediumPayRise: Double => Double = salary => salary * 1.3
-
   def smallPayRise: Double => Double = salary => salary * 1.1
 
   def getPayRiseCalc(employee: Employee): Double => Double = {
@@ -120,9 +118,7 @@ object HigherOrderFunctions extends App {
   val painting = Item(42.00) // -40% = 25.20
 
   def bigDiscount: Double => Double = discount => discount * .5
-
   def mediumDiscount: Double => Double = discount => discount * .4
-
   def smallDiscount: Double => Double = discount => discount * .2
 
   def getDiscountCalc(item: Item): Double => Double = {
