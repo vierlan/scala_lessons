@@ -3,7 +3,7 @@ package Week4.Monday
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
-object FibonacciCalcSpec extends AnyWordSpec with Matchers {
+class FibonacciCalcSpec extends AnyWordSpec with Matchers {
 
 
   "fibonacciRecursion" should {
