@@ -3,7 +3,7 @@ package Week4.Monday
 import scala.annotation.tailrec
 
 object FibonacciCalc extends App {
-  //class FibonacciCalc {
+  class FibonacciCalc {
 
     def fibonacciRecursion(position: Int): Int = {
       @tailrec
@@ -18,5 +18,11 @@ object FibonacciCalc extends App {
     }
 
     println(fibonacciRecursion(6))
-  //}
+  // eloise's calc with pattern matching
+  def betterFibonacci(n: Int, acc: Int = 1): Option[Int] = {
+    if (n < 0) None  else if (n == 0) Some(0)
+    else if (n <= 2) Some(acc)
+    else betterFibonacci(n-1, acc + betterFibonacci(n-2).get)}
+
+  }
 }
