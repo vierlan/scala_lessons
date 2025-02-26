@@ -48,24 +48,29 @@ object HigherOrderAfternoonMVP extends App {
   println(stringConvertor(true))
   println(stringConvertor(false))
 
-  def getCalculation(operation: String): (Double, Double) => Double = {
+  def getCalculation(operation: String): Either[String,(Double, Double) => Double] = {
     operation match {
-      case "addition" => addition
-      case "multiplication" => multiplication
-      case "division" => division
-      case "subtraction" => subtraction
+      case "addition" => Right(addition)
+      case "multiplication" =>  Right(multiplication)
+      case "division" =>  Right(division)
+      case "subtraction" =>  Right(subtraction)
+      case _ => Left("wrong method")
+
     }
   }
 
-  def calculate(a: Double , b: Double, operation: String): Double = {
-    val getOperation: (Double, Double) => Double = getCalculation(operation)
-    getOperation(a,b)
+  def calculate(a: Double , b: Double, operation: String): Either[String, Double] = {
+    val getOperation: Either[String,(Double, Double) => Double] = getCalculation(operation)
+    getOperation.map(_(a,b)    // .map_ because return is either, we need to map the either, if hits the right, it passes the parameter
+
+    )
   }
 
   println("addition: " + calculate(10, 5, "addition"))
   println("multiplication: " + calculate(10, 5, "multiplication"))
   println("division: " + calculate(10, 5, "division"))
   println("subtraction: " + calculate(10, 5, "subtraction"))
+  println("modulus: " + calculate(10, 5, "modulus"))
 
   def maxFunction(a: Double, b: Double): Double = {
     (a).max(b)
@@ -99,14 +104,13 @@ object HigherOrderAfternoonMVP extends App {
 
 // below not working
   def power(exponent: Int): Int => Int = {
-    exponent match {
-      case x => square2
-    }
+    def toExponent(base: Int): Int = Math.pow(base,exponent).toInt
+    toExponent
   }
 
   def square2(n: Int): Int = n * n
-
-  println(power(5))
-  println(power(15))
+  def normalSquare(num: Int): Int = power(2)(num)
+  println(normalSquare(5))
+  println(normalSquare(15))
 
 }
